@@ -1,0 +1,175 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        xmlns:viewModel="clr-namespace:Calculator.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="Calculator" 
+        Height="450" 
+        Width="400"
+        WindowStyle="{DynamicResource Material}"
+        
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignLightForeground}"
+        Background="{DynamicResource MaterialDesignDarkBackground}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        >
+
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style BasedOn="{StaticResource MaterialDesignPaperDarkButton}" TargetType="Button" >
+                <Setter Property="Margin" Value="0"></Setter>
+                <Setter Property="Padding" Value="0"></Setter>
+                <Setter Property="MaxHeight" Value="1000"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--#region Grid Row 0-->
+        <Label Grid.Row="0"
+               Grid.ColumnSpan="5"
+               Content="{Binding LableText}"/>
+        <!--#endregion-->
+        
+        <!--#region Grid Row 1 -->
+        <Button Grid.Row="1" Grid.Column="0"></Button>
+        <Button Grid.Row="1" Grid.Column="1"></Button>
+        <!--#endregion-->
+        
+        <!--#region Grid Row 2-->
+        <Button Grid.Row="2" Grid.Column="0"></Button>
+        <Button Grid.Row="2" Grid.Column="1"></Button>
+        <Button Grid.Row="2" Grid.Column="2"></Button>
+        <Button Grid.Row="2" Grid.Column="3"></Button>
+        <Button Grid.Row="2" Grid.Column="4"></Button>
+        <!--#endregion-->
+        
+        <!--#region Grid Row 3-->
+        <Button Grid.Row="3" Grid.Column="0"></Button>
+        <Button Grid.Row="3" Grid.Column="1"></Button>
+        <Button Grid.Row="3" Grid.Column="2"></Button>
+        <Button Grid.Row="3" Grid.Column="3"></Button>
+        <Button Grid.Row="3" Grid.Column="4" ></Button>
+        <!--#endregion-->
+
+        <!--#region Grid Row 4-->
+        <Button Grid.Row="4" Grid.Column="0"></Button>
+        <Button Grid.Row="4" Grid.Column="1"></Button>
+        <Button Grid.Row="4" Grid.Column="2"></Button>
+        <Button Grid.Row="4" Grid.Column="3" Content="{Binding ButtonCText}" Command="{Binding ClearLable}"></Button>
+        <Button Grid.Row="4" Grid.Column="4" Content="{Binding ButtonBackText}" Command="{Binding RemoveLastCharInLable}"></Button>
+        <!--#endregion-->
+
+        <!--#region Grid Row 5-->
+        <Button Grid.Row="5" Grid.Column="0"></Button>
+        <Button Grid.Row="5" Grid.Column="1"></Button>
+        <Button Grid.Row="5" Grid.Column="2"></Button>
+        <Button Grid.Row="5" Grid.Column="3"></Button>
+        <Button Grid.Row="5" Grid.Column="4"></Button>
+        <!--#endregion-->
+
+        <!--#region Grid Row 6-->
+        <Button Grid.Row="6" Grid.Column="0"></Button>
+        <Button Grid.Row="6" Grid.Column="1" Content="{Binding ButtonRoundBracketOpen}" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonRoundBracketOpen}"></Button>
+        <Button Grid.Row="6" Grid.Column="2" Content="{Binding ButtonRoundBracketClosed}" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonRoundBracketClosed}"></Button>
+        <Button Grid.Row="6" Grid.Column="3"></Button>
+        <Button Grid.Row="6" Grid.Column="4" Content="{Binding ButtonDividingText}" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonDividingText}"></Button>
+        <!--#endregion-->
+
+        <!--#region Grid Row 7-->
+        <Button Grid.Row="7" Grid.Column="0"></Button>
+        <Button Grid.Row="7" Grid.Column="1" Content="{Binding Button7Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button7Text}"></Button>
+        <Button Grid.Row="7" Grid.Column="2" Content="{Binding Button8Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button8Text}"></Button>
+        <Button Grid.Row="7" Grid.Column="3" Content="{Binding Button9Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button9Text}"></Button>
+        <Button Grid.Row="7" Grid.Column="4" Content="{Binding ButtonMultiplicationText}" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonMultiplicationText}"></Button>
+        <!--#endregion-->
+
+        <!--#region Grid Row 8-->
+        <Button Grid.Row="8" Grid.Column="0"></Button>
+        <Button Grid.Row="8" Grid.Column="1" Content="{Binding Button4Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button4Text}"></Button>
+        <Button Grid.Row="8" Grid.Column="2" Content="{Binding Button5Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button5Text}"></Button>
+        <Button Grid.Row="8" Grid.Column="3" Content="{Binding Button6Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button6Text}"></Button>
+        <Button Grid.Row="8" Grid.Column="4" Content="{Binding ButtonMinusText}" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonMinusText}"></Button>
+        <!--#endregion-->
+
+        <!--#region Grid Row 9-->
+        <Button Grid.Row="9" Grid.Column="0"></Button>
+        <Button Grid.Row="9" Grid.Column="1" Content="{Binding Button1Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button1Text}"></Button>
+        <Button Grid.Row="9" Grid.Column="2" Content="{Binding Button2Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button2Text}"></Button>
+        <Button Grid.Row="9" Grid.Column="3" Content="{Binding Button3Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button3Text}"></Button>
+        <Button Grid.Row="9" Grid.Column="4" Content="{Binding ButtonPlusText}" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonPlusText}"></Button> 
+        <!--#endregion-->
+
+        <!--#region Grid Row 10-->
+        <Button Grid.Row="10" Grid.Column="0"></Button>
+        <Button Grid.Row="10" Grid.Column="1"></Button>
+        <Button Grid.Row="10" Grid.Column="2" Content="{Binding Button0Text}" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button0Text}"></Button>
+        <Button Grid.Row="10" Grid.Column="3" Content="{Binding ButtonCommaText}" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonCommaText}"></Button>
+        <Button Grid.Row="10" Grid.Column="4" Content="{Binding ButtonEqualText}" Command="{Binding SolveEquation}"></Button>
+        <!--#endregion-->
+        <!--<Button Style="{DynamicResource MaterialDesignToolButton}" Grid.Row="1" Grid.Column="0" Content="{Binding ButtonPercentText}"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="{Binding ButtonCEText}"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="{Binding ButtonCText}"/>
+        <Button Grid.Row="1" Grid.Column="4" Command="{Binding RemoveLastCharInLable}" Content="{materialDesign:PackIcon BackspaceOutline}"/>
+
+        <Button Grid.Row="2" Grid.Column="0" Content="?"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="?"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="?"/>
+        <Button Grid.Row="2" Grid.Column="4" Command="{Binding AddTextToLable}" CommandParameter="/" Content="{Binding ButtonDividingText}"/>
+
+        <Button Grid.Row="3" Grid.Column="0" Command="{Binding AddTextToLable}" CommandParameter="7" Content="{Binding Button7Text}" />
+        <Button Grid.Row="3" Grid.Column="1" Command="{Binding AddTextToLable}" CommandParameter="8" Content="{Binding Button8Text}" />
+        <Button Grid.Row="3" Grid.Column="2" Command="{Binding AddTextToLable}" CommandParameter="9" Content="{Binding Button9Text}" />
+        <Button Grid.Row="3" Grid.Column="4" Command="{Binding AddTextToLable}" CommandParameter="*" Content="{Binding ButtonMultiplicationText}"/>
+
+        <Button Grid.Row="4" Grid.Column="0" Command="{Binding AddTextToLable}" CommandParameter="4" Content="{Binding Button4Text}" />
+        <Button Grid.Row="4" Grid.Column="1" Command="{Binding AddTextToLable}" CommandParameter="5" Content="{Binding Button5Text}" />
+        <Button Grid.Row="4" Grid.Column="2" Command="{Binding AddTextToLable}" CommandParameter="6" Content="{Binding Button6Text}" />
+        <Button Grid.Row="4" Grid.Column="4" Command="{Binding AddTextToLable}" CommandParameter="-" Content="{Binding ButtonMinusText}"/>
+
+        <Button Grid.Row="5" Grid.Column="0" Command="{Binding AddTextToLable}" CommandParameter="1" Content="{Binding Button1Text}" />
+        <Button Grid.Row="5" Grid.Column="1" Command="{Binding AddTextToLable}" CommandParameter="2" Content="{Binding Button2Text}" />
+        <Button Grid.Row="5" Grid.Column="2" Command="{Binding AddTextToLable}" CommandParameter="3" Content="{Binding Button3Text}" />
+        <Button Grid.Row="5" Grid.Column="4" Command="{Binding AddTextToLable}" CommandParameter="+" Content="{Binding ButtonPlusText}"/>
+
+        <Button Grid.Row="6" Grid.Column="0" Content="?"/>
+        <Button Grid.Row="6" Grid.Column="1" Command="{Binding AddTextToLable}" CommandParameter="0" Content="{Binding Button0Text}"/>
+        <Button Grid.Row="6" Grid.Column="2" Command="{Binding AddTextToLable}" CommandParameter="," Content="{Binding ButtonCommaText}"/>
+        <Button Grid.Row="6" Grid.Column="4" Command="{Binding SolveEquation}"  Content="{Binding ButtonEqualText}"/>-->
+
+    </Grid>
+</Window>
