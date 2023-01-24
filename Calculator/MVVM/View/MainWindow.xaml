@@ -14,8 +14,7 @@
         Background="{DynamicResource MaterialDesignDarkBackground}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="14"
-        FontFamily="{DynamicResource MaterialDesignFont}"
-        >
+        FontFamily="{DynamicResource MaterialDesignFont}">
 
     <Window.DataContext>
         <viewModel:MainWindowViewModel/>
@@ -138,35 +137,5 @@
         <Button Grid.Row="10" Grid.Column="3" Content="{Binding ButtonCommaText}" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonCommaText}"></Button>
         <Button Grid.Row="10" Grid.Column="4" Content="{Binding ButtonEqualText}" Command="{Binding SolveEquation}"></Button>
         <!--#endregion-->
-        <!--<Button Style="{DynamicResource MaterialDesignToolButton}" Grid.Row="1" Grid.Column="0" Content="{Binding ButtonPercentText}"/>
-        <Button Grid.Row="1" Grid.Column="1" Content="{Binding ButtonCEText}"/>
-        <Button Grid.Row="1" Grid.Column="2" Content="{Binding ButtonCText}"/>
-        <Button Grid.Row="1" Grid.Column="4" Command="{Binding RemoveLastCharInLable}" Content="{materialDesign:PackIcon BackspaceOutline}"/>
-
-        <Button Grid.Row="2" Grid.Column="0" Content="?"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="?"/>
-        <Button Grid.Row="2" Grid.Column="2" Content="?"/>
-        <Button Grid.Row="2" Grid.Column="4" Command="{Binding AddTextToLable}" CommandParameter="/" Content="{Binding ButtonDividingText}"/>
-
-        <Button Grid.Row="3" Grid.Column="0" Command="{Binding AddTextToLable}" CommandParameter="7" Content="{Binding Button7Text}" />
-        <Button Grid.Row="3" Grid.Column="1" Command="{Binding AddTextToLable}" CommandParameter="8" Content="{Binding Button8Text}" />
-        <Button Grid.Row="3" Grid.Column="2" Command="{Binding AddTextToLable}" CommandParameter="9" Content="{Binding Button9Text}" />
-        <Button Grid.Row="3" Grid.Column="4" Command="{Binding AddTextToLable}" CommandParameter="*" Content="{Binding ButtonMultiplicationText}"/>
-
-        <Button Grid.Row="4" Grid.Column="0" Command="{Binding AddTextToLable}" CommandParameter="4" Content="{Binding Button4Text}" />
-        <Button Grid.Row="4" Grid.Column="1" Command="{Binding AddTextToLable}" CommandParameter="5" Content="{Binding Button5Text}" />
-        <Button Grid.Row="4" Grid.Column="2" Command="{Binding AddTextToLable}" CommandParameter="6" Content="{Binding Button6Text}" />
-        <Button Grid.Row="4" Grid.Column="4" Command="{Binding AddTextToLable}" CommandParameter="-" Content="{Binding ButtonMinusText}"/>
-
-        <Button Grid.Row="5" Grid.Column="0" Command="{Binding AddTextToLable}" CommandParameter="1" Content="{Binding Button1Text}" />
-        <Button Grid.Row="5" Grid.Column="1" Command="{Binding AddTextToLable}" CommandParameter="2" Content="{Binding Button2Text}" />
-        <Button Grid.Row="5" Grid.Column="2" Command="{Binding AddTextToLable}" CommandParameter="3" Content="{Binding Button3Text}" />
-        <Button Grid.Row="5" Grid.Column="4" Command="{Binding AddTextToLable}" CommandParameter="+" Content="{Binding ButtonPlusText}"/>
-
-        <Button Grid.Row="6" Grid.Column="0" Content="?"/>
-        <Button Grid.Row="6" Grid.Column="1" Command="{Binding AddTextToLable}" CommandParameter="0" Content="{Binding Button0Text}"/>
-        <Button Grid.Row="6" Grid.Column="2" Command="{Binding AddTextToLable}" CommandParameter="," Content="{Binding ButtonCommaText}"/>
-        <Button Grid.Row="6" Grid.Column="4" Command="{Binding SolveEquation}"  Content="{Binding ButtonEqualText}"/>-->
-
     </Grid>
 </Window>
