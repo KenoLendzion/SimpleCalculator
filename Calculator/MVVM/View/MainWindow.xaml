@@ -20,6 +20,26 @@
         <viewModel:MainWindowViewModel/>
     </Window.DataContext>
 
+    <Window.InputBindings>
+        <KeyBinding Key="NumPad0" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button0Text}"></KeyBinding>
+        <KeyBinding Key="NumPad1" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button1Text}"></KeyBinding>
+        <KeyBinding Key="NumPad2" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button2Text}"></KeyBinding>
+        <KeyBinding Key="NumPad3" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button3Text}"></KeyBinding>
+        <KeyBinding Key="NumPad4" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button4Text}"></KeyBinding>
+        <KeyBinding Key="NumPad5" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button5Text}"></KeyBinding>
+        <KeyBinding Key="NumPad6" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button6Text}"></KeyBinding>
+        <KeyBinding Key="NumPad7" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button7Text}"></KeyBinding>
+        <KeyBinding Key="NumPad8" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button8Text}"></KeyBinding>
+        <KeyBinding Key="NumPad9" Command="{Binding AddTextToLable}" CommandParameter="{Binding Button9Text}"></KeyBinding>
+        <KeyBinding Key="Divide" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonDividingText}"></KeyBinding>
+        <KeyBinding Key="Multiply" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonMultiplicationText}"></KeyBinding>
+        <KeyBinding Key="Subtract" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonMinusText}"></KeyBinding>
+        <KeyBinding Key="Add" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonPlusText}"></KeyBinding>
+        <KeyBinding Key="Decimal" Command="{Binding AddTextToLable}" CommandParameter="{Binding ButtonCommaText}"></KeyBinding>
+        <KeyBinding Key="Enter" Command="{Binding SolveEquation}"></KeyBinding>
+        <KeyBinding Key="Backspace" Command="{Binding RemoveLastCharInLable}"></KeyBinding>
+    </Window.InputBindings>
+    
     <Window.Resources>
         <ResourceDictionary>
             <Style BasedOn="{StaticResource MaterialDesignPaperDarkButton}" TargetType="Button" >
